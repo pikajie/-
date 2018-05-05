@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<title>二维码的生成</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<link rel="stylesheet" type="text/css" href="index.css">
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="qrcode.js"></script>
+</head>
+<body>
+
+<div class="div1">
+<p>网址输入</p>
+<input id="text" type="text" value="https://www.baidu.com/" placeholder="输入网址" />
+<input type="button" name="button1" value="生成二维码" class="btn">
+<div id="qrcode"></div>
+</div>
+
+<script type="text/javascript">
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : 300,
+	height : 300
+});
+/*因为直接应用的是插件，应用包里面的对象，创建一个QRCode对象（跟java有一点类似）；
+通过DOM模型获得文档id为qrcode的元素，设置宽高都为300像素；
+这里崭新的就是二维码生成的大小了；*/
+
+function makeCode () {		
+	var elText = document.getElementById("text");
+	
+	if (!elText.value) {
+		elText.focus();
+		return;
+	}
+	
+	qrcode.makeCode(elText.value);
+}
+/*设置一个生成编码的函数，利用if语句条件判断，使鼠标定位选中；再根据输入的二维码的值，生成相应的编码；*/
+makeCode();
+/*引用函数*/
+
+	$(".btn").on("click",function(){
+		makeCode();
+	})
+	/*这个地方就是绑定一个事件了，当按钮（生成二维码）被点击的时候，就会执行上面定义的函数，生成相应的二维码；*/
+</script>
+</body>
+</html>

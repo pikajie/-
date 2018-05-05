@@ -1,0 +1,72 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.div1{
+	position: absolute;
+	left: 50%;
+	top: 10%;
+	margin-left:-176px;
+	border:1px solid #aaa;
+	width: 350px;
+	text-align: center;
+	border-radius: 5px;
+}
+
+p{
+	text-align: left;
+	margin-left: 25px;
+	color:/*  #3385ff */#999;
+	font-size: 18px;
+	margin-top: 10px;
+	font-family: 楷体;
+}
+
+#text{
+	margin-top: 5px;
+	width: 300px;
+	height: 30px;
+	line-height: 30px;
+	border:1px solid #aaa;
+	border-radius: 5px;
+	text-align: center;
+}
+
+#text::placeholder{
+	font-size: 16px;
+	opacity: 0.6;
+	font-family: 楷体;
+}
+
+.btn{
+	border:1px solid #c90000;
+	background-color: #c90a16;
+	width: 300px;
+	height: 30px;
+	letter-spacing: 20px;
+	margin-top: 30px;
+	border-radius: 5px;
+	color: white;
+	font-size: 18px; 
+	cursor: pointer;
+}
+
+.btn:hover{
+	background-color: #a51b24;
+}
+
+#qrcode{
+	width: 300px;
+	height: 300px;
+	margin-top: 15px;
+	margin-left: 25px;
+	margin-bottom: 20px;
+}
+/* 前面说过，每个元素都有可以添加的属性，
+元素的class属性和id属性值就可以作为我们的属性选择器，
+通过属性选择器来给我们的元素添加样式；
+例如，我们HTML中的第一个<div>标签有一个class="div1"，
+我们就可以通过选中它来为我们的<div>添加样式，看代码的第六行用
+.div来选中<div>,并且为其添加了样式；同理，其他的元素也是通过这种
+方式添加； */
